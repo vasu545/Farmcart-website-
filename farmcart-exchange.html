@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FarmCart Exchange</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <script defer src="./script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="brand-wrap">
+      <div class="logo" aria-label="FarmCart Exchange logo">
+        <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <circle cx="32" cy="32" r="28" fill="currentColor" opacity="0.1"></circle>
+          <path d="M17 37c7-1 12-7 15-17 5 8 10 14 15 17-8 1-13 4-15 10-3-6-8-9-15-10Z" fill="currentColor"></path>
+          <path d="M32 18v28" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path>
+        </svg>
+      </div>
+      <div>
+        <h1>FarmCart Exchange</h1>
+        <p>Buy and sell second-hand farm needs</p>
+      </div>
+    </div>
+
+    <nav class="top-actions" aria-label="Top actions">
+      <button class="theme-btn" data-theme-toggle aria-label="Toggle theme">🌙</button>
+      <button class="auth-btn" id="loginBtn">Login</button>
+      <button class="auth-btn hidden" id="logoutBtn">Logout</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <span class="badge">BTech Mini Project</span>
+      <h2>Online marketplace for used agriculture tools, vehicles, fertilizers and pesticides.</h2>
+      <p>FarmCart Exchange shows product cards, seller details, reviews, locations, price lists, category filters, and map links in one simple website.</p>
+      <div class="hero-actions">
+        <a href="#products" class="primary-btn">Browse items</a>
+        <a href="#categories" class="secondary-btn">View categories</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>Platform features</h3>
+      <ul>
+        <li>User login and logout demo</li>
+        <li>Search bar with filters</li>
+        <li>Seller contact and shop details</li>
+        <li>Google Maps location links</li>
+        <li>Reviews and rating display</li>
+      </ul>
+    </div>
+  </section>
+
+  <main id="main-content" class="layout">
+    <aside class="sidebar">
+      <section id="categories" class="panel">
+        <h3>Categories</h3>
+        <div class="category-list">
+          <button class="chip active" data-category="All">All</button>
+          <button class="chip" data-category="Tools">Tools</button>
+          <button class="chip" data-category="Vehicles">Vehicles</button>
+          <button class="chip" data-category="Fertilizers">Fertilizers</button>
+          <button class="chip" data-category="Pesticides">Pesticides</button>
+          <button class="chip" data-category="Irrigation">Irrigation</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h3>Filters</h3>
+        <label for="priceFilter">Max price</label>
+        <select id="priceFilter">
+          <option value="1000000">Any price</option>
+          <option value="10000">Below ₹10,000</option>
+          <option value="50000">Below ₹50,000</option>
+          <option value="100000">Below ₹1,00,000</option>
+          <option value="500000">Below ₹5,00,000</option>
+        </select>
+
+        <label for="locationFilter">Location</label>
+        <select id="locationFilter">
+          <option value="All">All places</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Warangal">Warangal</option>
+          <option value="Karimnagar">Karimnagar</option>
+          <option value="Nizamabad">Nizamabad</option>
+          <option value="Khammam">Khammam</option>
+        </select>
+      </section>
+
+      <section class="panel seller-box">
+        <h3>Why use this site?</h3>
+        <p>Farmers can find affordable products, compare sellers, call directly, and visit nearby shops using maps.</p>
+        <div class="mini-stats">
+          <div><strong>12+</strong><span>Listings</span></div>
+          <div><strong>6</strong><span>Categories</span></div>
+          <div><strong>4.6★</strong><span>Avg rating</span></div>
+        </div>
+      </section>
+    </aside>
+
+    <section class="content">
+      <section class="search-row">
+        <input id="searchInput" type="text" placeholder="Search tools, vehicles, fertilizers, pesticides..." aria-label="Search products" />
+        <div class="status-card">
+          <span id="userState">Guest user</span>
+          <small id="resultCount">Showing all items</small>
+        </div>
+      </section>
+
+      <section id="products" class="product-grid"></section>
+
+      <section class="panel features-panel">
+        <h3>Extra project modules</h3>
+        <div class="features-grid">
+          <article>
+            <h4>Trusted sellers</h4>
+            <p>Each card shows seller name, contact number, shop place, and rating.</p>
+          </article>
+          <article>
+            <h4>Simple cart demo</h4>
+            <p>Students can extend this with add-to-cart, wishlist, and order summary pages.</p>
+          </article>
+          <article>
+            <h4>Responsive design</h4>
+            <p>The layout works on laptop and mobile for mini project presentation.</p>
+          </article>
+          <article>
+            <h4>Easy to modify</h4>
+            <p>All product data is in one JavaScript array, so adding more items is simple.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="modal" id="loginModal" aria-hidden="true">
+    <div class="modal-card">
+      <h3>User Login</h3>
+      <label for="username">Username</label>
+      <input id="username" type="text" placeholder="Enter username" />
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="Enter password" />
+      <div class="modal-actions">
+        <button class="secondary-btn" id="closeModal">Cancel</button>
+        <button class="primary-btn" id="submitLogin">Login</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
